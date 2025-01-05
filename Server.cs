@@ -88,6 +88,12 @@ namespace OSPract3
                 }
             }
             catch (IOException) { }
+            finally
+            {
+                // Remove client from the list
+                _clients.Remove(client);
+                client.Close();
+            }
         }
     }
 }
